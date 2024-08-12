@@ -1,74 +1,66 @@
 class Pojistenci {
-    constructor(jazyk = "cs-cz") {
-        this.submitTlacitko = document.getElementById("submit");
-        this.jmenoInput = document.getElementById("jmeno");
-        this.prijmeniInput = document.getElementById("prijmeni");
-        this.vekInput = document.getElementById("vek");
-        this.telefonInput = document.getElementById("telefon");
-        this.vypisElement = document.getElementById("vypis");
-        this.vypisTabulka = document.getElementById("vypisTabulka");
-        this.seznam = [];
-        this.init();
+    constructor() {
+        document.addEventListener('DOMContentLoaded', () => {
+            this.jmenoInput = document.getElementById('jmeno');
+            this.prijmeniInput = document.getElementById('prijmeni');
+            this.telefonInput = document.getElementById('telefon');
+            this.vekInput = document.getElementById('vek');
+            this.vlozitBtn = document.getElementById('vlozit');
+            this.seznamUzivatelu = document.getElementById('seznam-uzivatelu');
+
+            this.zaznamy = JSON.parse(localStorage.getItem('zaznamy')) || [];
+
+            this.vlozitBtn.addEventListener('click', (event) => this.pridatZaznam(event));
+            this.vypisZaznamy();
+        });
     }
 
-    init() {
-        this.submitTlacitko.addEventListener('click', (e) => {
-            e.preventDefault();
-            this.vytvorPojistence();
-        }); 
+    ulozZaznamy() {
+        localStorage.setItem('zaznamy', JSON.stringify(this.zaznamy));
     }
 
-    vytvorPojistence() {
-        const jmeno = this.jmenoInput.value.trim();
-        const prijmeni = this.prijmeniInput.value.trim();
-        const vek = this.vekInput.value.trim();
-        const telefon = this.telefonInput.value.trim();
+    vypisZaznamy() {
+        this.seznamUzivatelu.innerHTML = '';
+        this.zaznamy.forEach((zaznam, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${zaznam.jmeno} ${zaznam.prijmeni}</td>
+                <td>${zaznam.telefon}</td>
+                <td>${zaznam.vek}</td>
+                <td class="center-button"><button class="btn btn-danger" onclick="pojistenci.smazatZaznam(${index})">Smazat záznam</button></td>
+            `;
+            this.seznamUzivatelu.appendChild(row);
+        });
+    }
 
-        if (jmeno && prijmeni && vek && telefon) {
-            this.seznam.push({ jmeno, prijmeni, vek, telefon });
-            this.vypisInfoPojistenec();
-            this.vycistitForm();
-        } else {
-            this.ukazatAlert("Vyplňte prosím všechna pole!");
+    smazatZaznam(index) {
+        if (confirm('Opravdu si přejete tento záznam odstranit?')) {
+            this.zaznamy.splice(index, 1);
+            this.ulozZaznamy();
+            this.vypisZaznamy();
         }
     }
 
-    validovatVstupy(jmeno, prijmeni, vek, telefon) {
-        return jmeno && prijmeni && vek && telefon && !isNaN(vek) && !isNaN(telefon);
+    pridatZaznam(event) {
+        event.preventDefault();
+        if (!this.jmenoInput.value || !this.prijmeniInput.value) {
+            alert('Musíte vyplnit jméno a příjmení');
+        } else if (!this.telefonInput.value || !this.vekInput.value || isNaN(this.telefonInput.value) || isNaN(this.vekInput.value)) {
+            alert('Musíte vyplnit věk a telefon a to v číselném formátu');
+        } else {
+            const zaznam = {
+                jmeno: this.jmenoInput.value,
+                prijmeni: this.prijmeniInput.value,
+                telefon: this.telefonInput.value,
+                vek: this.vekInput.value
+            };
+            this.zaznamy.push(zaznam);
+            this.ulozZaznamy();
+            this.vypisZaznamy();
+            this.jmenoInput.value = '';
+            this.prijmeniInput.value = '';
+            this.telefonInput.value = '';
+            this.vekInput.value = '';
+        }
     }
-
-
-    vypisInfoPojistenec() {
-        this.vypisTabulka.innerHTML = "";
-        this.seznam.forEach(poj => {
-            const row = this.vytvoritRadek(poj);
-            this.vypisTabulka.appendChild(row);
-        });
-    }
-    vytvoritRadek(poj) {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${poj.jmeno}</td>
-            <td>${poj.prijmeni}</td>
-            <td>${poj.vek}</td>
-            <td>${poj.telefon}</td>
-        `;
-        return row;
-    }
-
-    vycistitForm() {
-        this.jmenoInput.value = '';
-        this.prijmeniInput.value = '';
-        this.vekInput.value = '';
-        this.telefonInput.value = '';
-    }
-
-    ukazatAlert(zprava) {
-        alert(zprava);
-    }
-
-}
-
-window.onload = () => {
-    new Pojistenci();
 }
