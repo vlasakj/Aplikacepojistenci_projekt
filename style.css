@@ -6,7 +6,7 @@ html, body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    background-color: #afafae;
+    background-color: #f0f2f5;
     color: #333;
 }
 
@@ -16,7 +16,7 @@ html, body {
     width: 100%;
 }
 .navbar {
-    background-color: #457c92;
+    background-color: #0c5978;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -72,7 +72,6 @@ html, body {
     box-sizing: border-box;
 }
 .section {
-    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -106,20 +105,53 @@ html, body {
 h1 {
     margin-bottom: 20px;
     font-weight: 700;
-    color: #6a0dad;
+    color: #0c5978;
 }
-.form-group {
+.form {
     margin-bottom: 25px;
     text-align: left;
     width: 100%;
     max-width: 500px;
 }
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #333333;
+    font-weight: 700;
+}
+
+input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+button {
+    max-width: 50%;
+    padding: 12px;
+    background: #0c5978;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: #0c5978;
+}
 
 ul {
     list-style: none;
     padding: 0;
-    width: 100%;
     max-width: 400px;
+    margin: 0 auto; /* Centrování seznamu */
 }
 
 li {
@@ -128,7 +160,6 @@ li {
     padding: 10px;
     border-radius: 4px;
     border: 1px solid #ccc;
-    width: 100%;
     box-sizing: border-box;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -167,7 +198,7 @@ button {
 }
 
 footer {
-    background-color: #457c92;
+    background-color: #0c5978;
     color: #ffffff;
     padding: 10px;
     width: 100%;

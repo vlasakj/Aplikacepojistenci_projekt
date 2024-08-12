@@ -2,6 +2,7 @@
 <html lang="cs-cz">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Projekt pro závěrečnou zkoušku z JS" />
     <meta name="keywords" content="Evidencepojištěnců, JS, JavaScript, OOP, Evidence, pojistencu, projekt, zaverecny projekt" />
@@ -16,49 +17,56 @@
     <nav class="navbar">
         <img src="./src/logojv.png" alt="Logo" class="navbar-logo">
     
-        <button id="profileBtn">Profil pojištěného</button>
+        <!-- <button id="profileBtn">Profil pojištěného</button> -->
         <button id="listBtn">Seznam pojištěných</button>
-        <button id="addBtn">Přidat pojištěného</button>
+        <!-- <button id="addBtn">Přidat pojištěného</button> -->
     </nav>
-            <main class="container">
-                <section id="profile" class="section">
-                    <h1>Profil pojištěného</h1>
-                    <div class="content">
-                         <img src="./src/avatar.jpg" alt="Profilová Fotografie" class="profile-img">
-                        <p><strong>Jméno:</strong> Jan</p>
-                        <p><strong>Příjmení:</strong> Vlasák</p>
-                        <p><strong>Věk:</strong> 28</p>
-                        <p><strong>Telefon:</strong> 730 608 824</p>
-                    </div>
-                </section>
-                <section id="addPojisteni" class="section" style="display: none;">
-                    <h1>Přidat pojištěného</h1>
-                    <form id="pojisteniForm" class="content">
-                        <div class="form-group">
-                            <label for="jmeno">Jméno:</label>
-                            <input type="text" id="jmeno" required>
-                            <label for="prijmeni">Přijmení:</label>
-                            <input type="text" id="prijmeni" required>
-                            <label for="vek">Věk:</label>
-                            <input type="number" id="vek" required>
-                            <label for="telefon">Telefonní číslo:</label>
-                            <input type="text" id="telefon" required>
-                        </div>
-                    </section>
-                    <button id="submit">Přidat pojištěného</button>
-                    </form>
-                </section>
-        
-                <section id="pojisteniListContainer" class="section" style="display: none;">
-                    <h1> Seznam Pojištěných</h1>
-                    <ul id="pojisteniList" class="content"></ul>
-                </section>
+        <section id="addInsured" class="section">
+            <header>
+                <h1>Přidej Pojištence</h1>
+            </header>
+            <form id="pojistenecForm" class="content">
+                <div class="form-group">
+                    <label for="jmeno">Jméno:</label>
+                    <input type="text" id="jmeno" placeholder="Zadej své jméno">
+                    <br>
+                    <label for="prijmeni">Přijmení:</label>
+                    <input type="text" id="prijmeni" placeholder="Zadej své přijmení">
+                    <br>
+                    <label for="vek">Věk:</label>
+                    <input type="number" id="vek" placeholder="Zadej svůj věk">
+                    <br>
+                    <label for="telefon">Telefon:</label>
+                    <input type="number" id="telefon" placeholder="Zadej svůj telefon">
+                </div>
+                <button id="submit">Přidat pojištěného</button>
+            </form>
+        </section>
+        <section id="seznam" class="section" style="display: none;">
+            <table id="vypisTabulka" class="section">
+                <thead>
+                    <tr>
+                        <th>Jméno</th>
+                        <th>Příjmení</th>
+                        <th>Věk</th>
+                        <th>Telefon</th>
+                    </tr>
+                </thead>
+            </table>
+        <!-- <section id="pojisteniListContainer" class="section" style="display: none;">
+            <h1> Seznam Pojištěných</h1>
+            <ul id="vypi" class="content"></ul>
+        </section> -->
             </main>
             <footer>
                 &copy; <span id="year"></span> Jan Vlasák. Všechna práva vyhrazena.
-            </footer>
+            </footer> 
     </div>
-    <script src="./js/app.js"></script>
-    <!--<script src="/js/pojistenecList.js"></script>-->
+    <script src="./js/pojistenec.js"></script>
+    <script src="./js/seznam.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/obsluha.js"></script>
+    
 </body>
+
 </html>
