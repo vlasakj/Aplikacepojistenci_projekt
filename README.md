@@ -21,3 +21,17 @@ Tento projekt je vytvořen pomocí HTML, CSS, JavaScriptu a npm. Slouží k evid
 
 1. Spusťte projekt pomocí příkazu `npm start`.
 2. Otevřete `index.html` ve vašem prohlížeči.
+
+
+<h2>Použití</h2>
+  Stáhněte si projekt do vašeho počítače.
+  Otevřete soubor `index.html` v prohlížeči.
+  Použijte navigační tlačítka k přepínání mezi různými sekcemi aplikace.
+  Přidejte nové pojištěnce pomocí formuláře v sekci "Přidat pojištěného".
+  Zobrazte seznam pojištěnců v sekci "Seznam pojištěných".
+
+<h2>Závislosti</h2>
+Tento projekt je nezávislý na externích knihovnách a je plně funkční s moderními prohlížeči podporujícími HTML5, CSS3 a JavaScript ES6.
+
+<h2>Autor</h2>
+Tento projekt byl vytvořen jako součást finálního projektu pro IT Network. Autorem je Jan Vlasák , a veškerá práva jsou vyhrazena.
