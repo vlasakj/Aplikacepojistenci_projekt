@@ -19,18 +19,12 @@ Tento projekt je vytvořen pomocí HTML, CSS, JavaScriptu a npm. Slouží k evid
 
 <h2>#3. Použití</h2>
 
-1. Spusťte projekt pomocí příkazu `npm start`.
-2. Otevřete `index.html` ve vašem prohlížeči.
+1. Stáhněte si projekt do vašeho počítače.
+2. Otevřete soubor `index.html` v prohlížeči.
+3. Přidejte nové pojištěnce pomocí formuláře v sekci "Přidej pojištěného".
+4. Na stránce se v sekci Tabulka zadaných pojištěnců přidá pojištenec z formuláře
 
-
-<h2>Použití</h2>
-  Stáhněte si projekt do vašeho počítače.
-  Otevřete soubor `index.html` v prohlížeči.
-  Použijte navigační tlačítka k přepínání mezi různými sekcemi aplikace.
-  Přidejte nové pojištěnce pomocí formuláře v sekci "Přidat pojištěného".
-  Zobrazte seznam pojištěnců v sekci "Seznam pojištěných".
-
-<h2>Závislosti</h2>
+<h2>#4. Závislosti</h2>
 Tento projekt je nezávislý na externích knihovnách a je plně funkční s moderními prohlížeči podporujícími HTML5, CSS3 a JavaScript ES6.
 
 <h2>Autor</h2>
