@@ -31,11 +31,11 @@ html, body {
     box-sizing: border-box;
 }
 
-.navbar-buttons {
+.navbar-buttons a {
     display: flex;
     flex-direction: row; 
     align-items: center;
-    gap: 5px; 
+    gap: 10px; 
     flex-wrap: wrap;
 }
 
@@ -46,12 +46,13 @@ html, body {
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
-    padding: 5px;
+    padding: 15px;
+    margin-left: 15px;
     transition: color 0.3s ease;
 }
 
 .navbar button:hover {
-    color: #ddd;
+    color: #000000;
 }
 
 .navbar-logo {
@@ -137,7 +138,7 @@ input {
 
 button {
     max-width: 50%;
-    padding: 12px;
+    padding: 100px;
     background: #0c5978;
     color: white;
     font-weight: bold;
@@ -188,15 +189,6 @@ th, td {
 th { 
     background-color: #f2f2f2;
     text-align: center; 
-}
-.form-group label { 
-    display: block; 
-    margin-bottom: 5px; 
-}
-.form-group input { 
-    width: 100%; 
-    padding: 8px; 
-    box-sizing: border-box; 
 }
 
 button { 
