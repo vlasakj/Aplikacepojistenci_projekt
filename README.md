@@ -9,6 +9,7 @@ Tento projekt je vytvořen pomocí HTML, CSS, JavaScriptu a npm. Slouží k evid
 - `js/zaznam.js`: JavaScript soubor pro manipulaci se záznamy.
 - `js/script.js`: JavaScript soubor pro hlavní logiku aplikace.
 - `js/obsluha.js`: JavaScript soubor pro obsluhu událostí.
+- `js/footerYear.js`: JavaScript soubor, který nastavuje aktuální rok v patičce stránky.
 
 <h2>#2. Instalace</h2>
 
