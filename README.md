@@ -1,4 +1,4 @@
-<h1>Aplikace pojistných událostí</h1>
+<h1>Závěrečný projekt ITNetwork - Aplikace pojistných událostí</h1>
 
 Tento projekt je vytvořen pomocí HTML, CSS, JavaScriptu a npm. Slouží k evidenci pojištěnců.
 
